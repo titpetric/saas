@@ -3,7 +3,7 @@
 		<div class="container body">
 
 			<router-link class="logo" to="/">
-				<i class="mdi mdi-arrow-right-bold-hexagon-outline logo-icon"></i><span class="large-text">RED</span>
+				<i class="mdi mdi-arrow-right-bold-hexagon-outline logo-icon"></i><span class="large-text">{{ options.title_short }}</span>
 			</router-link>
 
 			<nav>
@@ -26,11 +26,13 @@
 
 <script>
 import menu from '@/api/menu.json'
+import config from '@/api/config.json'
 
 export default {
   data () {
     return {
-      'menu': menu['front']['header']
+      options: config.options,
+      menu: menu['front']['header']
     }
   }
 }

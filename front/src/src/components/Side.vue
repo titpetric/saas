@@ -1,7 +1,7 @@
 <template>
 	<nav>
 		<a class="logo" href="/">
-			<i class="mdi mdi-arrow-right-bold-hexagon-outline logo-icon"></i><span class="large-text">RED</span>
+			<i class="mdi mdi-arrow-right-bold-hexagon-outline logo-icon"></i><span class="large-text">{{ options.title_short }}</span>
 		</a>
 
 		<icon name="bars" scale="2" class="toggle-btn" data-toggle="collapse" data-target="#menu-content"></icon>
@@ -24,11 +24,13 @@
 
 <script>
 import menu from '@/api/menu.json'
+import config from '@/api/config.json'
 
 export default {
   data () {
     return {
-      'menu': menu['back']['side']
+      options: config.options,
+      menu: menu['back']['side']
     }
   }
 }
