@@ -16,6 +16,7 @@
 	"back": {
 		"side": [
 			{ "title": "Configuration", "icon": "hexagon-multiple", "link": "/" },
+			{ "title": "Info", "icon": "account-outline", "link": "/info" },
 			{ "title": "Logout", "icon": "logout", "link": "/auth/logout" }
 		]
 	}
