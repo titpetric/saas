@@ -5,6 +5,9 @@ To build your project, you should run `build.sh` respectively. This will create 
 folder under the `src/` project root. This folder is used for publishing to Firebase or
 some other static web site host.
 
+> If you want to contribute (especially in the CSS/design area), please follow me on
+> Twitter [@TitPetric](https://twitter.com/TitPetric) and let's talk. Pull requests welcome.
+
 ## Commands
 
 - `create.sh` - was used to build a vanilla `src/` folder with a Vue.js app,
@@ -18,6 +21,18 @@ Hosting URL: https://my-saas-project-6de9d.firebaseapp.com
 It uses Firebase as it's authentication method, so you can sign up, login, logout and
 inspect the look and feel of this template. The template provides a reasonable front-end
 design and something basic for the back-end.
+
+## Design
+
+This is what I could come up with my two left hands.
+
+### Front page
+
+![](images/front-page.png)
+
+### Backend dashboard
+
+![](images/back-page.png)
 
 ## Intended use
 
