@@ -3,9 +3,12 @@
 		<div class="container body">
 			<nav>
 				<ul>
-					<li v-for="item in menu" :class="item.class">
-						<a :href="item.link" :class="item.link_class" :title="item.title">{{item.title}}</a>
-					</li>
+					<router-link v-for="(item,index) in menu" :to="item.link" tag="li" :ref="item.title" :class="item.class">
+						<a :class="item.link_class">
+							<icon v-if="item.icon" :name="item.icon"></icon>
+							<span>{{item.title}}</span>
+						</a>
+					</router-link>
 				</ul>
 			</nav>
 		</div>
