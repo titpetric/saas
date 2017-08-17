@@ -24,22 +24,43 @@ export default {
       content: {}
     }
   },
+  beforeRouteLeave (to, from, next) {
+    if (to.meta.componentName === 'Page') {
+      this.loadContents(to.path, next)
+    } else {
+      next()
+    }
+  },
+  beforeRouteUpdate (to, from, next) {
+    this.loadContents(to.path, next)
+  },
   created () {
-    var params = {}
-    var link = '/api' + this.$route.path + '.json'
-    axios
-      .get(link, params)
-      .then(response => {
-        this.content = response.data
-        this.ready = true
-      })
-      .catch(err => {
-        this.content = {
-          title: 'Page not found',
-          content: err
-        }
-        this.ready = true
-      })
+    this.loadContents(this.$route.path)
+  },
+  methods: {
+    loadContents (path, callback) {
+      var params = {}
+      var link = '/api' + path + '.json'
+      return axios
+        .get(link, params)
+        .then(response => {
+          this.content = response.data
+          this.ready = true
+          if (typeof callback === 'function') {
+            callback()
+          }
+        })
+        .catch(err => {
+          this.content = {
+            title: 'Page not found',
+            content: err
+          }
+          this.ready = true
+          if (typeof callback === 'function') {
+            callback()
+          }
+        })
+    }
   }
 }
 </script>

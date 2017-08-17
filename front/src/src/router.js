@@ -53,6 +53,9 @@ function route (path, componentName) {
     componentName = componentName.join('/')
   }
   result.component = view(componentName)
+  result.meta = {
+    componentName: componentName
+  }
   return result
 }
 
