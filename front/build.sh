@@ -8,9 +8,6 @@ if [ -d "src/src/api" ]; then
 fi
 set +e
 cd ..
-if [ ! -d "../public_html" ]; then
-	mkdir ../public_html
-fi
 find src/dist/ -name '*.js' | xargs gzip -k
 find src/dist/ -name '*.css' | xargs gzip -k
 find src/dist/ -name '*.html' | xargs gzip -k
