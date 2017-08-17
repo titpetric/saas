@@ -13,3 +13,4 @@ yarn install
 yarn add axios jsonp --save
 yarn add sass-loader node-sass --dev
 yarn add bootstrap@4.0.0-alpha.6 --dev
+npm rebuild node-saas
