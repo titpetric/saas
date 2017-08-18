@@ -5,7 +5,7 @@
 			<p class="category" v-if="subtitle">{{subtitle}}</p>
 		</div>
 		<div class="table-responsive">
-			<table class="table" width="100%" :class="tableClass">
+			<table class="table" :class="tableClass">
 				<thead>
 					<th v-for="column in columns">{{column}}</th>
 				</thead>
@@ -91,3 +91,9 @@ export default {
   }
 }
 </script>
+
+<style type="text/css" scoped>
+table.table {
+	width: 100%;
+}
+</style>
